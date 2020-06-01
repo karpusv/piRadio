@@ -3,7 +3,7 @@
 from subprocess import run
 
 
-def play_sound(filename, freq="100.0", sample_rate="22050", stereo=True):
+def play_wav(filename, freq="100.0", sample_rate="22050", stereo=True):
     if(stereo):
         run(["./pifm", filename, freq, sample_rate, "stereo"])
     else:
