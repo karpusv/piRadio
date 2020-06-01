@@ -1,8 +1,11 @@
 **Forked in order to improve Python**
 
-```diff
-- Note: this project is no longer maintained
+## Python3 usage:
 ```
+import PiRadio
+PiRadio.play_sound("sounds/star-wars.wav", "100.0")
+```
+This will play the sound at 100 Mhz. 
 
 ## UPDATE
 
