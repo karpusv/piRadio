@@ -3,7 +3,7 @@
 ## Python3 usage:
 ```
 import PiRadio
-PiRadio.play_sound("sounds/star-wars.wav", "100.0")
+PiRadio.play_wav("sounds/star-wars.wav", "100.0")
 ```
 This will play the sound at 100 Mhz. 
 
@@ -21,8 +21,8 @@ This has been updated by the original authors to use DMA, as well as allow tunin
 
 ```
 sudo python
->>> import PiFm
->>> PiFm.play_sound("sound.wav")
+>>> import PiRadio
+>>> PiRadio.play_wav("sound.wav")
 ```
 
 Now connect a 20cm or so plain wire to GPIO 4 (which is pin 7 on [header P1](http://elinux.org/RPi_Low-level_peripherals#General_Purpose_Input.2FOutput_.28GPIO.29)) to act as an antenna, and tune an FM radio to 103.3Mhz
