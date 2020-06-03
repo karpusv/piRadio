@@ -1,37 +1,29 @@
-**Forked in order to improve Python**
+# PiRadio
+*Based on PiFM, which was originally created by Oliver Mattos and Oskar Weigl. Code is GPL.*
 
-## Python3 usage:
+## Python 3
+### Prerequisites
+You may need to install make (to compile PiFM) and ffmpeg (for mp3 support).
+```
+sudo apt update
+sudo apt install make ffmpeg
+```
+### Use
+Connect a ~20cm wire to GPIO 4 (Pin 7) in order to work as your antenna and tune your radio to 100 Mhz. The antenna is optional, but range is reduced from ~100 meters to ~10cm without it. The sound file must be 16 bit wav format.
 ```
 import PiRadio
 PiRadio.play_wav("sounds/star-wars.wav", "100.0")
 ```
-This will play the sound at 100 Mhz. 
-
-## UPDATE
-
-~~### https://github.com/richardghirst/PiBits/blob/master/PiFmDma/PiFmDma.c presents a rewrite using DMA, which uses much less CPU than this version. Please use that version in preference.~~
-
-This has been updated by the original authors to use DMA, as well as allow tuning and stereo.  Richard Hirst is no longer maintaining PiBits, and refers users to this solution.
-
-## Turning the Raspberry Pi Into an FM Transmitter
-
-### Steps to play sound:
-
-*(Created by Oliver Mattos and Oskar Weigl. Code is GPL)*
-
+#### Advanced options and MP3 support
 ```
-sudo python
->>> import PiRadio
->>> PiRadio.play_wav("sound.wav")
+#Play an MP3 at 100 Mhz, with the sample rate of 22050 Hz with mono sound:
+PiRadio.play_mp3("trip.mp3", "100.0", "22050", False)
 ```
+Enabling stereo is not reccomended with MP3s, as this may slow down the live conversion.
 
-Now connect a 20cm or so plain wire to GPIO 4 (which is pin 7 on [header P1](http://elinux.org/RPi_Low-level_peripherals#General_Purpose_Input.2FOutput_.28GPIO.29)) to act as an antenna, and tune an FM radio to 103.3Mhz
 
-from a [post on MAKE](http://blog.makezine.com/2012/12/10/raspberry-pi-as-an-fm-transmitter/?parent=Electronics) by Matt Richardson
-
-The antenna is optional, but range is reduced from ~100 meters to ~10cm without the antenna. The sound file must be 16 bit ~~mono~~ wav format.
-
-### New! Now with stereo
+## Command line
+The command line interface is just regular ol' PiFM for now.
 
 ```
 sudo ./pifm left_right.wav 103.3 22050 stereo
