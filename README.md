@@ -9,7 +9,7 @@ sudo apt update
 sudo apt install make ffmpeg
 ```
 ### Use
-Connect a ~20cm wire to GPIO 4 (Pin 7) in order to work as your antenna and tune your radio to 100 Mhz. The antenna is optional, but range is reduced from ~100 meters to ~10cm without the antenna. The sound file must be 16 bit wav format.
+Connect a ~20cm wire to GPIO 4 (Pin 7) in order to work as your antenna and tune your radio to 100 Mhz. The antenna is optional, but range is reduced from ~100 meters to ~10cm without it. The sound file must be 16 bit wav format.
 ```
 import PiRadio
 PiRadio.play_wav("sounds/star-wars.wav", "100.0")
