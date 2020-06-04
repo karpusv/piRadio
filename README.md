@@ -1,6 +1,6 @@
 # PiRadio
 *Based on PiFM, which was originally created by Oliver Mattos and Oskar Weigl. Code is GPL.*
-
+Consult law before using.
 ## Python 3
 ### Prerequisites
 You may need to install make (to compile PiFM) and ffmpeg (for mp3 support).
